@@ -64,7 +64,8 @@ int main(void) {
 	General_Init();
 	USART_Init(USART2);
 	System_Clock_Init();
-	while(1) {
+	while(1) {	//NEED TO MAKE ALGORITHM TO FIND WHAT BUTTON IS PRESSED
+		//Then write in assembly :(
 		USART1_Buffer_Rx[Tx_Counter] = Read(USART2);
 		Write(USART2, USART1_Buffer_Rx[Tx_Counter]);
 		Tx_Counter++;
