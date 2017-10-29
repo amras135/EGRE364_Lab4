@@ -170,7 +170,29 @@ againx 		NOP  		                        ;Execute two no-operation instructions
 			BNE  againx
 			POP {r1,PC}
 			ENDP
-                
+
+//Algorithm:	
+//	- Rows: GPIOE; PE 11-14
+// 	- Cols: GPIOE; PE 10
+//			GPIOH; PH 0,1
+
+//			  PB0	  PB1      PB2
+//		   - - - - - - - - - - - - -
+// R4:PE14 |  X	   |   X    |	X   |
+//		   - - - - - - - - - - - - -  
+// R3:PE13 |  X	   |   X    |	X   |
+//		   - - - - - - - - - - - - -  
+// R2:PE12 |  X	   |   X    |	X   |
+//		   - - - - - - - - - - - - -  
+// R1:PE11 |  X	   |   X    |	X   |
+//		   - - - - - - - - - - - - -  
+//			C1:PH0 | C1:PH0 |C1:PH0
+
+//GPIOE: PE 10-14
+//GPIOH: PH 0-1
+//GPIOD: PD 5-6
+//GPIOB: PB 0-2
+       
 col_check   PROC
             PUSH{r0,r1,r2,r4,LR}
             
